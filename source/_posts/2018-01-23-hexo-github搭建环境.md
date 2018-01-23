@@ -5,3 +5,4 @@ tags:
 ---
 
 <!-- more -->
+![Aaron Swartz](https://raw.githubusercontent.com/alibaba/fastjson/master/logo.jpg)
