@@ -14,6 +14,7 @@ categories:
 hexo官方介绍，支持 GitHub Flavored Markdown 的所有功能。但是生成的一些效果和GitHub风格的并不一样，最令我无法忍受的一点就是，在文本编辑器中插入换行，
 生成的html中就加入一个&lt;br&gt;但是在页面上我并不期待他换行。
 
+<!-- more -->
 ### 替换markdown生成插件
 
 在hexo的插件列表搜索markdown，发现有三个markdown插件。
@@ -23,11 +24,13 @@ hexo官方介绍，支持 GitHub Flavored Markdown 的所有功能。但是生�
 ```
 	npm un hexo-renderer-marked --save
 ```
-#### 安装
+
+### 安装
+
 ```
 	npm i hexo-renderer-markdown-it --save
 ```
-#### 简单配置
+### 简单配置
 
 在hexo博客的配置文件中`_config.yml`添加如下代码
 ```
@@ -40,7 +43,7 @@ hexo官方介绍，支持 GitHub Flavored Markdown 的所有功能。但是生�
 
 我使用的是commonmark。
 
-#### 高级配置
+### 高级配置
 
 ```
 	# Markdown-it config
@@ -66,3 +69,6 @@ hexo官方介绍，支持 GitHub Flavored Markdown 的所有功能。但是生�
 		permalinkClass: header-anchor
 		permalinkSymbol: ¶
 ```
+
+参考：
+* [Hexo 插件指南](http://wdxtub.com/2015/12/06/hexo-plugins-guide/)
