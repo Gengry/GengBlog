@@ -82,3 +82,5 @@ deploy:
     github: git@github.com:Gengry/Gengry.github.io.git
    # gitcafe: git@github.com:Gengry/Gengry.github.io.git
   branch: master
+  
+markdown: 'commonmark'
