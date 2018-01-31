@@ -141,4 +141,9 @@ public interface AwardBaseMapper {
 
 上面可见，返回的json串中已经携带了null值的key。不同版本中的属性差异还是挺大的，官网现在是3.4.6，我用的3.2.6中很多属性就没有，如果需要使用新特性，需要升级mybatis版本。
 
+# 后记
+
+* 最后在提醒下，对于map中null值引发的空指针问题，可以很好的用 apache commons包中MapUtils解决，可以减少很多不必要的bug。
+* 给客户端返回的json数据中，数组，集合，字典，对象不要有null值，如果是null需要put一个空HashMap或ArrayList，否则客户端反序列化会异常。
+
 <blockquote class="blockquote-center">今天最好的表现，是明天最低的要求。</blockquote>
