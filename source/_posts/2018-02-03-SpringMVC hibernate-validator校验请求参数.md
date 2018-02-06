@@ -15,7 +15,7 @@ categories:
 
 > 如果不指定校验器，classpath内有hibernate validoter，spring会默认使用它。
 
-```java
+```Java
 	@ApiOperation(value="提交商城订单",tags="商城")
 	@Auth
 	@RequestMapping(value = "/submitMallOrder",method=RequestMethod.POST)
@@ -29,7 +29,7 @@ categories:
 	}
 ```
 
-```java
+```Java
 package com.jsz.peini.bean.mall;
 
 import java.math.BigDecimal;
@@ -113,7 +113,7 @@ public class MallOrderInfosVO {
 
 ```
 
-```java
+```Java
 package com.jsz.peini.bean.mall;
 
 import java.math.BigDecimal;
