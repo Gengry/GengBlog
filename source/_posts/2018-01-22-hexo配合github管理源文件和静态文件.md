@@ -2,6 +2,8 @@
 title: hexo配合github管理源文件和静态文件
 date: 2018-01-22 22:21:55
 tags:
+categories:
+- hexo
 ---
 
 其实，Hexo生成的文件里面是有一个.gitignore的，所以它的本意应该也是想我们把这些文件放到GitHub上存放的。

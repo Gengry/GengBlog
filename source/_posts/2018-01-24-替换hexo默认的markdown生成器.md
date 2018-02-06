@@ -1,8 +1,6 @@
 ---
 title: 替换hexo默认的markdown生成器
 date: 2018-01-24 15:59:35
-tags:
-- hexo
 categories:
 - hexo
 ---

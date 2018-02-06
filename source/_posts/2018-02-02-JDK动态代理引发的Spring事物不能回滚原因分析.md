@@ -3,6 +3,8 @@ title: JDK动态代理引发的Spring事物不能回滚原因分析
 date: 2018-02-02 09:59:52
 tags:
 categories:
+- java
+- spring
 ---
 
 12.架构师不得不知道的Spring事物不能回滚的深层次原因
