@@ -80,7 +80,7 @@ deploy:
   type: git
   repository: 
     github: git@github.com:Gengry/Gengry.github.io.git
-   # gitcafe: git@github.com:Gengry/Gengry.github.io.git
+    gitee: git@gitee.com:gengry/Gengry.git
   branch: master
   
 markdown: 'commonmark'
