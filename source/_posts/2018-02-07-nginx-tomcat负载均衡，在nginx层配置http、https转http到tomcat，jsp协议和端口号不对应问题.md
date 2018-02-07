@@ -2,7 +2,10 @@
 title: nginx+tomcat负载均衡，在nginx层配置http、https转http到tomcat，jsp协议和端口号不对应问题
 date: 2018-02-07 14:18:20
 tags:
+- nginx
+- tomcat
 categories:
+- nginx
 ---
 
 # 问题描述
@@ -12,6 +15,7 @@ App端部分功能使用h5页面实现，但是偶尔用户反映会有广告。
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 ```
 结果是协议为http，端口号为 https的端口号，导致静态资源加载、ajax请求失败。
+http://****:6443/**** 无法请求到服务器。
 
 # 解决问题
 
@@ -127,6 +131,10 @@ public Object ggggggg( HttpServletRequest request) throws ParseException {
 
 经过debug我们可以看到 request的请求头中已经加入了这几个参数  
 ![](https://raw.githubusercontent.com/Gengry/blogImage/master/20180207/1.jpg)  
+
+配置tomcat后可以查看request获取的协议和端口号信息。
+![](https://raw.githubusercontent.com/Gengry/blogImage/master/20180207/2.jpg)  
+![](https://raw.githubusercontent.com/Gengry/blogImage/master/20180207/3.jpg)  
 
 tomcat的配置文件其实就是指定tomcat如何将http请求包装成request对象。我们打开tomcat的api看一看RemoteIpValve这个类。
 [tomcat API](http://tomcat.apache.org/tomcat-8.0-doc/api/org/apache/catalina/valves/RemoteIpValve.html)
