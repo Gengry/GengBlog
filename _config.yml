@@ -73,6 +73,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: material
+#theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -83,4 +84,14 @@ deploy:
     gitee: git@gitee.com:gengry/Gengry.git
   branch: master
   
-markdown: 'commonmark'
+#markdown: 'default'
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+  modifyAnchors: ''
+  autolink: true
