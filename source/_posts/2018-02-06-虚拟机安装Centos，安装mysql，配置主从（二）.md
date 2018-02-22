@@ -11,7 +11,7 @@ categories:
 仍然使用[中国科学技术大学](http://mirrors.ustc.edu.cn/)镜像站下载mysql。  
 最新版本的[mysql](http://iso.mirrors.ustc.edu.cn/mysql-ftp/Downloads/MySQL-5.7/mysql-5.7.20-linux-glibc2.12-i686.tar)。
 这里下载的mysql是二进制包，没有使用linux的包管理工具。
-
+<!-- more -->
 # 阅读mysql安装文档
 通过百度打开mysql的官网，找到mysql5.7GA的文档。  
 ![](https://raw.githubusercontent.com/Gengry/blogImage/master/20180205/19.jpg)  

@@ -11,6 +11,7 @@ categories:
 # 问题描述
 App端部分功能使用h5页面实现，但是偶尔用户反映会有广告。也就是请求被第三方劫持了插入了广告，所以决定全业务切https。在nginx配置https将https的请求转发的tomcat的http端口。
 但是发现一个问题就是h5页面的资源和ajax请求失败，原因是url中的协议和端口号不对应。
+<!-- more -->
 ```
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 ```
