@@ -81,7 +81,7 @@ deploy:
   type: git
   repository: 
     github: git@github.com:Gengry/Gengry.github.io.git
-    gitee: git@gitee.com:gengry/Gengry.git
+    #gitee: git@gitee.com:gengry/Gengry.git
   branch: master
   
 #markdown: 'default'
