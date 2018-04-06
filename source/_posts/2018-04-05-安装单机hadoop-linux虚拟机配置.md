@@ -220,7 +220,25 @@ DNS2=8.8.4.4
 	或
 	ssh-copy-id -i localhost 
 
-3.安装hadoop2.4.1
+5.hdfs基本使用
+
+	1.0查看帮助
+		hadoop fs -help <cmd>
+	1.1上传
+		hadoop fs -put <linux上文件> <hdfs上的路径>
+	1.2查看文件内容
+		hadoop fs -cat <hdfs上的路径>
+	1.3查看文件列表
+		hadoop fs -ls /
+	1.4下载文件
+		hadoop fs -get <hdfs上的路径> <linux上文件>
+
+6.MapReduce示例
+	
+hadoop为我们提供了mr的示例程序，存放在/hadoop/hadoop-2.2.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar
+	
+		
+安装hadoop2.4.1
 	注意：hadoop2.x的配置文件$HADOOP_HOME/etc/hadoop
 	伪分布式需要修改5个配置文件
 	3.1配置hadoop
@@ -321,5 +339,25 @@ at org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager.registerDatanod
 网上给出的错误原因：
 错误和原来的hosts中的“127.0.0.1 localhost”没有关系，是增加了的“192.168.1.101 localhost”解决了问题。原因在于RSA没有给局域网ip（192.168.1.101）授权，造成data node没有正常启动。
 	
+项目启动后http://192.168.137.3:50070页面内的`Browse the filesystem`无法访问
+
+解决：
+	点击`Browse the filesystem`浏览器中的地址栏为`http://localhost:50075/browseDirectory.jsp?namenodeInfoPort=50070&dir=/&nnaddr=192.168.137.3:9000`
+	很明显是地址不对，但是用鼠标指着`Browse the filesystem`显示的地址是对的，说明在browseDirectory.jsp做了一次页面跳转。
+	将地址手动修改为192.168.137.3:50075后可以正常访问。
+	猜测：
+		`browseDirectory.jsp`这个页面内namenode随机选择了一个datanode的地址做跳转，对于namenode来说，单机模式的datanode地址就是localhost。
+		我自己配置的时候并没有配置主机名，主机默认就是localhost。
+	修改：
+		配置主机名
+		vim /etc/sysconfig/network
+		NETWORKING=yes 
+		HOSTNAME=gengry    ###
+		配置主机名和ip对应关系
+		vim /etc/hosts
+		192.168.137.3	gengry
+		配置windows的hosts
+		192.168.137.3	gengry
+	重启hadoop，再次访问，正常。
 	
 <blockquote class="blockquote-center">今天最好的表现，是明天最低的要求。</blockquote>
